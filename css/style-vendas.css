@@ -1,0 +1,418 @@
+/* --- 1. Variáveis de Cor e Tipografia --- */
+:root {
+    --cor-vinho: #390909;
+    --cor-dourado: #E1B24B;
+    --cor-fundo: #1A0403;
+    --cor-texto: #333333;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+    --bs-primary: var(--cor-vinho);
+    --bs-primary-rgb: 134, 45, 45;
+    --bs-body-font-family: var(--font-sans);
+    --bs-body-color: var(--cor-texto);
+}
+
+/* --- 2. Estilos Globais --- */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--cor-fundo); 
+    overflow-x: hidden; 
+}
+
+h1, h2, h3, h4, h5, h6, .display-1, .display-2, .display-3, .display-4 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--cor-texto); 
+}
+
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: none !important; 
+    box-shadow: none !important; 
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--cor-dourado) !important;
+    outline-offset: 2px;
+    box-shadow: none !important;
+}
+
+/* --- 3. HEADER COM EFEITO DE SCROLL --- */
+.navbar {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(50, 30, 20, 0.30); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    padding-top: 0.5rem !important; 
+    padding-bottom: 0.5rem !important;
+}
+
+.navbar-brand {
+    height: 120px; 
+    transition: height 0.4s ease;
+    display: flex; 
+    align-items: center;
+}
+
+.navbar-brand img {
+    max-height: 120px; 
+    transition: max-height 0.4s ease;
+}
+
+.navbar.scrolled .navbar-brand {
+    height: 80px; 
+}
+
+.navbar.scrolled .navbar-brand img {
+    max-height: 80px; 
+}
+
+.nav-link {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff !important; 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.nav-link:hover {
+    color: var(--cor-dourado) !important;
+}
+
+/* --- 4. SEÇÕES GERAIS --- */
+.section-dark {
+    background-color: var(--cor-fundo);
+    color: rgba(245, 245, 245, 0.8);
+}
+
+.section-dark h2, .section-dark h3 {
+    color: #fff;
+}
+
+.section-dark .icon-feature {
+    color: var(--cor-dourado);
+    font-size: 3.5rem;
+}
+
+.section-light {
+    background-color: #ffffff;
+    color: #555;
+}
+
+.section-light h2, .section-light h3 {
+    color: var(--cor-texto); /* cor de texto padrão */
+}
+
+.lead-list {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.lead-list .bi {
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+/* --- 5. NOVA HERO SECTION (VENDA) --- */
+#hero-venda {
+    position: relative;
+    background-color: #333;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 0;
+}
+
+#hero-video-venda {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0; 
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(26, 4, 3, 0.7); 
+    z-index: 1;
+}
+
+#hero-venda .container {
+    position: relative;
+    z-index: 2; 
+}
+
+#hero-venda h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+#hero-venda .lead {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 6. BOTÃO DE COMPRA --- */
+.btn-gold {
+    background-color: var(--cor-dourado);
+    border-color: var(--cor-dourado);
+    color: var(--cor-vinho);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #c99d41;
+    border-color: #c99d41;
+    color: var(--cor-vinho);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* --- 7. SEÇÃO DE OFERTA FINAL --- */
+#oferta {
+    background-color: var(--cor-vinho);
+    color: #fff;
+    background-image: linear-gradient(rgba(57, 9, 9, 0.9), rgba(57, 9, 9, 0.95)), url('../img/site/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#oferta .offer-details {
+    background: rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.1rem;
+}
+
+#oferta .offer-details ul {
+    margin-bottom: 0;
+}
+
+#oferta .price-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--cor-texto);
+}
+
+#oferta .price-old {
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    opacity: 0.7;
+    display: block;
+}
+
+#oferta .price-new {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    display: block;
+    line-height: 1.1;
+}
+
+#oferta .price-save {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #008a00;
+    display: block;
+}
+
+#productCarousel {
+    overflow: hidden;
+}
+
+#productCarousel .carousel-item {
+    aspect-ratio: 1 / 1; 
+    background-color: #fff; 
+}
+
+#productCarousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: var(--bs-border-radius); 
+}
+
+#productCarousel .carousel-control-prev-icon,
+#productCarousel .carousel-control-next-icon {
+    filter: invert(1) brightness(0.4); 
+}
+
+#productCarousel .carousel-indicators button {
+    background-color: #000; 
+    opacity: 0.5;
+}
+
+#productCarousel .carousel-indicators .active {
+    background-color: var(--cor-dourado); 
+    opacity: 1;
+}
+
+/* --- 8. FOOTER --- */
+footer { 
+    background-color: var(--cor-fundo); 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding-top: 2.5rem; 
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+footer p { 
+    margin-bottom: 0.5rem; 
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+footer a { 
+    color: rgba(255, 255, 255, 0.8); 
+    text-decoration: none; 
+    font-weight: 700; 
+    transition: color 0.3s ease;
+}
+
+footer a:hover { 
+    color: var(--cor-dourado); 
+    text-decoration: none; 
+}
+
+/* --- 9. MEDIA QUERIES PARA RESPONSIVIDADE --- */
+@media (max-width: 767.98px) {
+
+    .navbar {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    .navbar-brand {
+        height: 70px;
+    }
+
+    .navbar.scrolled .navbar-brand {
+        height: 50px; 
+    }
+
+    .navbar-brand img {
+        max-height: 70px;
+    }
+
+    .navbar.scrolled .navbar-brand img {
+        max-height: 50px;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(26, 4, 3, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-link {
+        padding: 0.5rem 0; 
+        text-align: center;
+    }
+
+    #hero-venda {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #hero-venda .container {
+        padding-top: 5rem; 
+    }
+
+    #hero-venda h1 {
+        font-size: clamp(2.3rem, 8vw, 3.2rem); 
+    }
+
+    #hero-venda .lead {
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
+        margin-bottom: 2.5rem !important; 
+    }
+
+    .btn-gold {
+        width: 100%; 
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .section-dark, .section-light, #oferta {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    h2.display-5 {
+        font-size: 1.8rem;
+    }
+
+    .section-dark .icon-feature {
+        font-size: 2.5rem; 
+        margin-bottom: 0.5rem !important;
+    }
+
+    .section-dark h3 {
+        font-size: 1.25rem; 
+    }
+
+    .section-dark .row.g-5 {
+        --bs-gutter-y: 2rem;
+    }
+
+    #para-quem-e .col-lg-6.order-lg-1 {
+        order: 2;
+    }
+    #para-quem-e .col-lg-6.order-lg-2 {
+        order: 1;
+    }
+
+    #oferta h2.display-4 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    #oferta .price-new {
+        font-size: 2rem;
+    }
+
+    #oferta .btn-gold {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    #productCarousel {
+        width: 100% !important;
+    }
+}
