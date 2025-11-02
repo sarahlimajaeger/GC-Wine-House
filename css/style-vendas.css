@@ -65,7 +65,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .navbar-brand img {
-    max-height: 120px; 
+    max-height: 100px; 
     transition: max-height 0.4s ease;
 }
 
@@ -109,7 +109,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 .section-light h2, .section-light h3 {
-    color: var(--cor-texto); /* cor de texto padrão */
+    color: var(--cor-texto); 
 }
 
 .lead-list {
@@ -140,7 +140,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
+    min-width: 120%;
     min-height: 100%;
     width: auto;
     height: auto;
@@ -165,7 +165,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 #hero-venda h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(2.5rem, 4.7vw, 4.5rem);
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }

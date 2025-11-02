@@ -131,7 +131,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 #hero h1, #hero .lead, #hero .btn {
     position: relative;
-    z-index: 3; /* Acima do fade */
+    z-index: 3; 
 }
 
 #hero h1 {
@@ -141,7 +141,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 #hero .lead {
-    font-size: clamp(2rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     font-weight: 400;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
